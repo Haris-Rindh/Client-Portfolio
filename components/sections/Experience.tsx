@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-16 md:py-24 px-5 sm:px-8 md:px-12 lg:px-16 bg-surface">
+    <section id="experience" className="py-16 md:py-24 px-4 sm:px-8 md:px-12 lg:px-16 bg-surface">
       <div className="max-w-[1000px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -25,16 +25,16 @@ export default function Experience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, delay: i * 0.1 }}
-            className="glass p-6 sm:p-8 md:p-10 mb-6 relative overflow-hidden group"
+            className="glass p-5 sm:p-8 md:p-10 mb-4 sm:mb-6 relative overflow-hidden group min-w-0"
           >
             <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green to-transparent" />
 
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 gap-3">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 sm:gap-3 mb-4">
               <div className="inline-flex items-center gap-2.5 px-4 py-2 bg-green/15 border border-green/30 rounded-full w-max">
                 <span className="text-base">{exp.icon}</span>
                 <span className="font-display text-xs md:text-sm font-bold text-green">{exp.name}</span>
               </div>
-              <span className="text-xs md:text-sm text-body-tertiary px-3.5 py-1.5 border border-white/10 rounded-full w-max">{exp.time}</span>
+              <span className="text-xs text-body-tertiary px-3 py-1.5 border border-white/10 rounded-full w-max">{exp.time}</span>
             </div>
 
             <div className="font-display text-lg md:text-xl font-extrabold mb-3 tracking-tight text-white">{exp.role}</div>

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function Education() {
   return (
     <section id="education" className="py-16 md:py-24 px-5 sm:px-8 md:px-12 lg:px-16 bg-black">
-      <div className="max-w-[800px] mx-auto">
+      <div className="max-w-[800px] mx-auto px-0">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -16,7 +16,7 @@ export default function Education() {
         </motion.div>
 
         <div className="relative mt-10 md:mt-14">
-          <div className="absolute left-[20px] sm:left-6 top-0 bottom-0 w-[1px] bg-gradient-to-b from-green to-green/10" />
+          <div className="absolute left-[18px] sm:left-[22px] top-0 bottom-0 w-[1px] bg-gradient-to-b from-green to-green/10" />
 
           {[
             { delay: 0, icon: '🎓', year: '2022 — Present · 6th Semester', title: 'BSc Software Engineering', sub: 'Islamia University Bahawalpur', desc: 'Studying core computer science fundamentals alongside software development practices — gaining the engineering perspective that powers every design decision I make.' },
@@ -29,12 +29,12 @@ export default function Education() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, delay: item.delay }}
-              className="grid grid-cols-[40px_1fr] sm:grid-cols-[64px_1fr] gap-4 sm:gap-6 mb-8 md:mb-10 relative"
+              className="grid grid-cols-[36px_1fr] sm:grid-cols-[56px_1fr] gap-3 sm:gap-6 mb-7 md:mb-10 relative"
             >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green/15 border-2 border-green rounded-full flex items-center justify-center text-lg sm:text-xl shadow-elevation-green relative z-10">
+              <div className="w-9 h-9 sm:w-11 sm:h-11 bg-green/15 border-2 border-green rounded-full flex items-center justify-center text-base sm:text-lg shadow-elevation-green relative z-10 flex-shrink-0">
                 {item.icon}
               </div>
-              <div className="glass p-5 sm:p-6 md:p-7">
+              <div className="glass p-4 sm:p-6 md:p-7 min-w-0">
                 <div className="text-xs sm:text-sm font-semibold tracking-widest text-green mb-1.5">{item.year}</div>
                 <div className="font-display text-base sm:text-lg font-bold mb-1 text-white">{item.title}</div>
                 <div className="text-sm sm:text-base text-body-tertiary mb-2.5">{item.sub}</div>

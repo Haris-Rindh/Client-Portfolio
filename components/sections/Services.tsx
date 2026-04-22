@@ -58,7 +58,7 @@ function ServiceCard({ svc, index }: { svc: ServiceData; index: number }) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      className="glass p-9 relative overflow-hidden group cursor-none hover:shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_40px_rgba(1,218,94,0.2)] hover:border-green/40 transition-shadow duration-500 w-full"
+      className="glass p-5 sm:p-7 relative overflow-hidden group cursor-none hover:shadow-[0_20px_60px_rgba(0,0,0,0.5),0_0_40px_rgba(1,218,94,0.15)] hover:border-green/40 transition-shadow duration-500 w-full"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-green/15 via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none" />
 
@@ -80,7 +80,7 @@ function ServiceCard({ svc, index }: { svc: ServiceData; index: number }) {
 
 export default function Services() {
   return (
-    <section id="services" className="py-16 md:py-24 px-5 sm:px-8 md:px-12 lg:px-16 bg-black relative">
+    <section id="services" className="py-16 md:py-24 px-4 sm:px-8 md:px-12 lg:px-16 bg-black relative">
       <div className="absolute top-1/4 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-green/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-green/5 blur-[150px] rounded-full pointer-events-none" />
 
@@ -96,7 +96,7 @@ export default function Services() {
           <h2 className="section-title text-[clamp(2rem,6vw,3.5rem)]">Services &amp; <br className="hidden sm:block" /><span>Expertise</span></h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8" style={{ perspective: 1000 }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8" style={{ perspective: 1000 }}>
           {services.map((svc, i) => (
             <ServiceCard key={svc.title} svc={svc} index={i} />
           ))}

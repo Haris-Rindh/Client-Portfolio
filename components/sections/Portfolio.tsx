@@ -67,7 +67,7 @@ function ProjectCard({ p, isLarge }: { p: ProjectData; isLarge: boolean }) {
         )}
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent flex flex-col items-start justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out z-10">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent flex flex-col items-start justify-end p-4 sm:p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out z-10">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: isHovered ? 0 : 20, opacity: isHovered ? 1 : 0 }}
@@ -110,7 +110,7 @@ export default function Portfolio() {
   const filteredProjects = projects.filter(p => filter === 'all' || p.cat === filter);
 
   return (
-    <section ref={sectionRef} id="portfolio" className="py-16 md:py-32 px-5 sm:px-8 md:px-12 lg:px-16 bg-surface relative overflow-hidden">
+    <section ref={sectionRef} id="portfolio" className="py-16 md:py-32 px-4 sm:px-8 md:px-12 lg:px-16 bg-surface relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-green/5 blur-[100px] rounded-full pointer-events-none z-0" />
 
       <div className="max-w-[1200px] mx-auto relative z-10">
@@ -130,13 +130,13 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
-            className="flex flex-wrap gap-2 sm:gap-3"
+            className="flex flex-wrap gap-1.5 sm:gap-3"
           >
             {['all', 'branding', 'social', 'uiux', 'print'].map(f => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
-                className={`px-4 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold tracking-wide rounded-full border cursor-none transition-all duration-300 capitalize ${filter === f ? 'border-green text-green bg-green/15 shadow-[0_0_20px_rgba(1,218,94,0.3)] scale-105' : 'border-white/10 text-white/50 bg-surface-2 hover:border-green/50 hover:text-white hover:bg-white/5 hover:scale-105'}`}
+                className={`px-3 sm:px-5 py-1.5 sm:py-2.5 text-[0.65rem] sm:text-sm font-semibold tracking-wide rounded-full border cursor-none transition-all duration-300 capitalize ${filter === f ? 'border-green text-green bg-green/15 shadow-[0_0_20px_rgba(1,218,94,0.3)] scale-105' : 'border-white/10 text-white/50 bg-surface-2 hover:border-green/50 hover:text-white hover:bg-white/5 hover:scale-105'}`}
               >
                 {f === 'uiux' ? 'UI/UX' : f === 'social' ? 'Social Media' : f}
               </button>
@@ -144,7 +144,7 @@ export default function Portfolio() {
           </motion.div>
         </div>
 
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((p, index) => {
               const isLarge = index === 0 || index === 3;
